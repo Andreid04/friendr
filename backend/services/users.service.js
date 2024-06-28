@@ -1,4 +1,5 @@
 
+//const { updateUser } = require('../controllers/users.controller');
 const UserModel = require('../data/users.model');
 
 const usersService = {
@@ -14,9 +15,24 @@ const usersService = {
         .then(() => 
             console.log('User created')); 
     },
-    deleteUser: (userID) => {
-        console.log(`Deleted user ${userID} in service`)
-        //console.log(userID);
+    updateUser: (userId,update) => {
+        console.log("Reached updating service");
+        console.log(userId);
+
+        UserModel.findOneAndUpdate({id: userId}, update)
+        .then(() => {
+            console.log(`Updated user ${userId} in service`);
+            return;
+        })
+    },
+    deleteUser: (userId) => {
+        console.log("Reached deleting service");
+
+        UserModel.deleteOne({id: userId}).then(() => 
+           { console.log(`Deleted user ${userId} in service`)
+            return;
+    });
+    
     }
 }
 

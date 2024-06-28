@@ -1,5 +1,5 @@
 const usersService = require("../services/users.service");
-const UserModel = require("../data/users.model")
+const UserModel = require("../data/users.model");
 
 const usersController = {
     getUser: async (req, res) => {
@@ -29,9 +29,19 @@ const usersController = {
         usersService.createUser(userToBeCreated);
         res.status(201).send("User created succesfully")
     },
+    updateUser: async (req,res) => {
+        console.log("Reached update controller");
+        const userId = req.params.id;
+        const update = req.body;
+        usersService.updateUser(userId,update);
+        res.status(200).send("Updated user");
+
+    },
     deleteUser: async (req, res) => {
-        console.log(`Deleted user with id: ${userID}`);
-        usersService.deleteUser(userID);
+        console.log("Reached delete controller");
+        const userId = req.params.id;
+        usersService.deleteUser(userId);
+        res.status(200).send("Succesfully deleted user");
     }
 }
 
