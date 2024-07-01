@@ -1,0 +1,36 @@
+.container {
+    background-color: lightgrey;
+    height: 100vh;
+    
+    display: flex;
+    justify-content: center;
+}
+
+.login-card {
+    width: 500px;
+    height: auto;
+    background-color: grey;
+    border-radius: 16px;
+    padding: 32px;
+    
+    display: flex;
+    align-self: center;
+    align-items: center;
+    flex-direction: column;//una sub alta afisate
+
+    gap: 16px;//sau margin
+}
+
+.login-fields {
+
+}
+.sign-in-btn{
+    background-color: red;
+
+    width: 100%;
+    height: 60px;
+    padding: 16px 32px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+}
