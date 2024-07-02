@@ -7,6 +7,10 @@ const usersService = {
         const response = await UserModel.findOne({id: userId},{});
         return response;
     },
+    getUserByUsername: async (username) => {
+        const response = await UserModel.findOne({username: username},{firstName:1, lastName:1, _id:0,});
+        return response;
+    },
     createUser: (userObj) => {
         console.log("Reached user service")
         console.log(userObj);

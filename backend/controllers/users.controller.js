@@ -4,9 +4,13 @@ const UserModel = require("../data/users.model");
 const usersController = {
     getUser: async (req, res) => {
         console.log("Reached GET user controller");
-        const userId = req.params.id;
-        console.log(req.params.id);
-        const userObj = await usersService.getUserById(userId);
+        const username = req.params.username;
+        console.log(req.params.username);
+        const userObj = await usersService.getUserByUsername(username);
+        if(!userObj){
+            res.status(404).send("Username not found");
+            return;
+        }
         res.status(200).send(userObj);
     },
     createUser: async (req, res) => {

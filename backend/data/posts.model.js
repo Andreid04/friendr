@@ -10,9 +10,9 @@ const mongoose = require('mongoose');
 
 const PostModel = mongoose.model('Post',
     {
-        id: Number,
+        id: String,
         date: String,
-        user_id: String,
+        author: String,
         title: String,
         description: String
     }

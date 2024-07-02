@@ -22,8 +22,7 @@ const postsController = {
         //validate post obj from request
         if (
             !postToBeCreated ||
-            !postToBeCreated.id ||
-            !postToBeCreated.user_id ||
+            !postToBeCreated.author ||
             !postToBeCreated.title ||
             !postToBeCreated.description
         ) {
@@ -31,7 +30,6 @@ const postsController = {
             return;
         }
 
-        postToBeCreated.date = new Date().toISOString();//to create the date automatically
 
         postsService.createPost(postToBeCreated);
         res.status(201).send("Post created succesfully")

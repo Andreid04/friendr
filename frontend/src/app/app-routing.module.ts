@@ -12,7 +12,7 @@ const routes: Routes = [{
   path:'homepage', 
   component: HomepageComponent,
 },
-{path: '**', component: LoginComponent },
+{path: '**', redirectTo: '' },
 ];
 
 @NgModule({

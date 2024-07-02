@@ -1,5 +1,5 @@
 .container {
-    background-color: lightgrey;
+    background-color: #68B0AB;
     height: 100vh;
     
     display: flex;
@@ -9,7 +9,7 @@
 .login-card {
     width: 500px;
     height: auto;
-    background-color: grey;
+    background-color: #FAF3DD;
     border-radius: 16px;
     padding: 32px;
     
@@ -19,18 +19,36 @@
     flex-direction: column;//una sub alta afisate
 
     gap: 16px;//sau margin
+
+    color: #4A7C59;
+}
+.login-card h1{
+    text-decoration: bold;
 }
 
 .login-fields {
 
 }
 .sign-in-btn{
-    background-color: red;
+    background-color: #4A7C59;
 
-    width: 100%;
+    width: 80%;
     height: 60px;
     padding: 16px 32px;
     border-radius: 8px;
     border: none;
     color: white;
+}
+.sign-in-btn:hover{
+    background-color: #81cf98;
+}
+
+input{
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+    background-color: none;
+}
+.sign1 {
+    text-align: left;
 }

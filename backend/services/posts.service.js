@@ -1,6 +1,7 @@
 //const { updatePost } = require('../controllers/posts.controller');
 //const { getAllPosts } = require('../controllers/posts.controller');
 const PostModel = require('../data/posts.model');
+const {v4: uuidv4} = require('uuid');//for creating ids automatically
 
 const postsService = {
     getPostById: async (postId) => {
@@ -12,9 +13,11 @@ const postsService = {
         const response = PostModel.find();//returns all entries
         return response;
     },
-    createPost: (postObj) => {//postObj = postToBeCreated
+    createPost: (postObj) => {
         console.log("Reached post service")
         console.log(postObj);
+        postObj.date = new Date().toISOString();//to create the date automatically
+        postObj.id = uuidv4();
         const postToBeCreated = new PostModel(postObj);
         postToBeCreated.save()
         .then(() => 
