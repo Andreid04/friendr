@@ -21,7 +21,7 @@ const usersController = {
         //validate user obj from request
         if (
             !userToBeCreated ||
-            !userToBeCreated.id ||
+            //!userToBeCreated.id ||
             !userToBeCreated.firstName ||
             !userToBeCreated.lastName ||
             !userToBeCreated.username

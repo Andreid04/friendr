@@ -1,6 +1,7 @@
 
 //const { updateUser } = require('../controllers/users.controller');
 const UserModel = require('../data/users.model');
+const {v4: uuidv4} = require('uuid');//for creating ids automatically
 
 const usersService = {
     getUserById: async (userId) => {
@@ -14,6 +15,7 @@ const usersService = {
     createUser: (userObj) => {
         console.log("Reached user service")
         console.log(userObj);
+        userObj.id = uuidv4();
         const userToBeCreated = new UserModel(userObj);
         userToBeCreated.save()
         .then(() => 

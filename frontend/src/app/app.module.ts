@@ -8,13 +8,17 @@ import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { provideHttpClient } from '@angular/common/http';
 import { TopNavbarComponent } from './top-navbar/top-navbar.component';
+import { PostComponent } from './post/post.component';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomepageComponent,
-    TopNavbarComponent
+    TopNavbarComponent,
+    PostComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,

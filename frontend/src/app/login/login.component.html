@@ -6,6 +6,7 @@
 
         <input type="text" placeholder="Enter your username" [(ngModel)]="username"/>
 
-        <button class="sign-in-btn" (click)="signIn()">Sign in</button>
+        <button class="sign-in-btn" (click)="signIn()" [disabled]= "loading">
+            Sign in</button>
     </div>
 </div>
