@@ -13,6 +13,13 @@ const postsService = {
         const response = PostModel.find();//returns all entries
         return response;
     },
+    removePostLikes: async (postId,username) => {
+        await PostModel.updateOne({id: postId},{$pull: {likes: username}});
+    },
+    addPostLikes: async (postId,username) => {
+        await PostModel.updateOne({id: postId},{$push: {likes: username}});
+
+    },
     createPost: (postObj) => {
         console.log("Reached post service")
         console.log(postObj);

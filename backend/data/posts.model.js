@@ -14,7 +14,8 @@ const PostModel = mongoose.model('Post',
         date: String,
         author: String,
         title: String,
-        description: String
+        description: String,
+        likes: [String]
     }
 );
 

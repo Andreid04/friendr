@@ -8,5 +8,6 @@ router.get('/:id',postsController.getPost);
 router.get('/',postsController.getAllPosts);
 router.put('/:id',postsController.updatePost);
 router.delete('/:id',postsController.deletePost);
+router.patch('/:id/likes',postsController.updatePostLikes);
 
 module.exports = router;
